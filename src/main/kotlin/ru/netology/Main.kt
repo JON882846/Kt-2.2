@@ -128,7 +128,7 @@ fun main() {
 
     val service = WallService(postIndex)
 
-    comment = service.createComment(6, comment)
+    comment = service.createComment(3, comment)
 
     println(service.add(post3))
 }

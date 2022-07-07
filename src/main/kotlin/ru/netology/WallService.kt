@@ -15,7 +15,7 @@ class WallService(
 
 
     fun createComment(postId: Int, comment: Comment): Comment {
-        if (postIndex.contains(postId-1)){
+        if (postIndex.contains(postId)){
             comments += comment
             return comment
         } else {
@@ -28,6 +28,7 @@ class WallService(
         uniqueId++
         val addedPost = post.copy(id = uniqueId)
         posts += addedPost
+        println(posts.size)
         return posts.last()
 
     }

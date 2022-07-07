@@ -9,7 +9,7 @@ class WallServiceTest {
     @Test
     fun add() {
 
-        val service = WallService()
+        val service = WallService(postIndex)
 
         val post = Post(
             ownerId = 1,
@@ -47,7 +47,7 @@ class WallServiceTest {
     fun updateTrue() {
 
 
-        val service = WallService()
+        val service = WallService(postIndex)
 
         service.add(
             Post(
@@ -58,7 +58,7 @@ class WallServiceTest {
                 text = "ppppppppppppppppp",
                 replyOwnerId = 1,
                 replyPostId = 1,
-                friendsOnly = false,
+                friendsOnly = true,
                 comments = Post.Comments(),
                 copyright = Post.Copyright(),
                 likes = Post.Likes(),
@@ -173,7 +173,7 @@ class WallServiceTest {
 
     @Test
     fun updateFalse() {
-        val service = WallService()
+        val service = WallService(postIndex)
 
         service.add(
             Post(
@@ -297,12 +297,21 @@ class WallServiceTest {
 
 
     @Test(expected = PostNotFoundException::class)
-    fun shouldThrow() {
-        // здесь код с вызовом функции, которая должна выкинуть PostNotFoundException
+    fun createComment() {
+        val service = WallService(postIndex)
+        val comment = Comment(
+            5,
+            874,
+            53542,
+            "Котлин",
+            8544,
+            8778,
+           "World"
+        )
+        val expectedValue = comment
+        val realValue = service.createComment(10, comment)
+
+        assertEquals(expectedValue, realValue)
     }
-
-
-
-
 
 }
