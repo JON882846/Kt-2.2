@@ -1,18 +1,37 @@
 package ru.netology
 
+import Exseption.PostNotFoundException
 
-class WallService {
+class WallService(
+     var postIndex: Array<Int>,
+) {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
     private var uniqueId = 0
+
+    init {
+       this.postIndex = arrayOf(post1.id, post2.id, post3.id)
+    }
+
+
+    fun createComment(postId: Int, comment: Comment): Comment {
+        if (postIndex.contains(postId-1)){
+            comments += comment
+            return comment
+        } else {
+            throw PostNotFoundException("NO POST")
+        }
+    }
+
 
     fun add(post: Post): Post {
         uniqueId++
         val addedPost = post.copy(id = uniqueId)
         posts += addedPost
-        println(posts.size)
-        println(posts.last())
         return posts.last()
+
     }
+
 
     fun update(post: Post): Boolean {
         val postId = post.component1()

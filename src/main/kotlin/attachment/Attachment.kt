@@ -1,4 +1,4 @@
-package ru.netology
+package attachment
 
 interface Attachment {
           val type: String

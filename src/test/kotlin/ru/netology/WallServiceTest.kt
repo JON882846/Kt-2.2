@@ -1,5 +1,6 @@
 package ru.netology
 
+import Exseption.PostNotFoundException
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -293,5 +294,15 @@ class WallServiceTest {
 
         assertFalse(result)
     }
+
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        // здесь код с вызовом функции, которая должна выкинуть PostNotFoundException
+    }
+
+
+
+
 
 }

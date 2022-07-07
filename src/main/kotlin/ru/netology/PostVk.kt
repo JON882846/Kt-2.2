@@ -1,5 +1,8 @@
 package ru.netology
 
+import attachment.Attachment
+
+
 data class Post(
     val id: Int = 0,
     val ownerId: Int,
@@ -28,7 +31,6 @@ data class Post(
     val arrayAttachment: Array<Attachment>
 
 ) {
-
     data class Comments(
         val count: Int = 1,
         val canPost: Boolean = true,
@@ -139,4 +141,6 @@ data class Post(
         result = 31 * result + arrayAttachment.contentHashCode()
         return result
     }
+
 }
+

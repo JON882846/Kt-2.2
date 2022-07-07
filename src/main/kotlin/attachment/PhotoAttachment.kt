@@ -1,4 +1,4 @@
-package ru.netology
+package attachment
 
 
 data class PhotoAttachment(

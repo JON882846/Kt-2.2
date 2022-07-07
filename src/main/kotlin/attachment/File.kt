@@ -1,6 +1,6 @@
-package ru.netology
+package attachment
 
-class File(
+data class File(
     val id: Int,
     val ownerId: Int,
     val title: String,
